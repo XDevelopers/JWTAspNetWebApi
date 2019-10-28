@@ -1,12 +1,8 @@
 ﻿using AuthorizationServer.Api.Entities;
-using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.DataHandler.Encoder;
 using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens;
-using System.Linq;
-using System.Web;
 using Thinktecture.IdentityModel.Tokens;
 
 namespace AuthorizationServer.Api.Formats
@@ -15,7 +11,7 @@ namespace AuthorizationServer.Api.Formats
     {
         private const string AudiencePropertyKey = "audience";
 
-        private readonly string _issuer = string.Empty;
+        private readonly string _issuer;
 
         public CustomJwtFormat(string issuer)
         {

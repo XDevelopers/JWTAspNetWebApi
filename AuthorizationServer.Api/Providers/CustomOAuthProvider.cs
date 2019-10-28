@@ -1,12 +1,8 @@
-﻿using Microsoft.Owin;
-using Microsoft.Owin.Security;
+﻿using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace AuthorizationServer.Api.Providers
 {
@@ -47,7 +43,7 @@ namespace AuthorizationServer.Api.Providers
 
             context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
-            //Dummy check here, you need to do your DB checks against membership system http://bit.ly/SPAAuthCode
+            // Dummy check here, you need to do your DB checks against membership system http://bit.ly/SPAAuthCode
             if (context.UserName != context.Password)
             {
                 context.SetError("invalid_grant", "The user name or password is incorrect");
